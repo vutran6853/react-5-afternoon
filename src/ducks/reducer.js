@@ -6,6 +6,18 @@ const UPDATE_CITY = 'UPDATE_CITY';
 const UPDATE_PROP = 'UPDATE_CITY';
 const UPDATE_FOUND = 'UPDATE_FOUND';
 
+const UPDATE_REALESTATEAGENT = 'UPDATE_REALSTATEAGENT';
+const UPDATE_COST = 'UPDATE_COST';
+const UPDATE_DOWNPAYMENT = 'UPDATE_DOWNPAYMENT';
+const UPDATE_CREDIT = 'UPDATE_CREDIT';
+const UPDATE_HISTORY = 'UPDATE_HISTORY';
+const UPDATE_ADDRESSONE = 'UPDATE_ADDRESSONE';
+const UPDATE_ADDRESSTWO = 'UPDATE_ADDRESSTWO';
+const UPDATE_ADDRESSTHREE = 'UPDATE_ADDRESSTHREE';
+const UPDATE_FIRSTNAME = 'UPDATE_FIRSTNAME';
+const UPDATE_LASTNAME = 'UPDATE_LASTNAME';
+const UPDATE_EMAIL = 'UPDATE_EMAIL';
+
 
 // INITAL (props) TO PASS TO COMPONENT
 const initalState = {
@@ -16,7 +28,7 @@ const initalState = {
   found: false,
   readEstateAgent: 'false',
   cost: 0,
-  downPatment: 0,
+  downPayment: 0,
   credit: '',
   history: '',
   addressOne: '',
@@ -64,6 +76,74 @@ export function updateFound(found) {
   }
 }
 
+export function updateRealStateAgent(readEstateAgent) {
+  return {
+    type: UPDATE_REALESTATEAGENT,
+    payload: readEstateAgent
+  }
+}
+  
+
+export function updateCost(cost) {
+  return {
+    type: UPDATE_COST,
+    payload: cost
+  }
+}
+
+export function updateDownPayment(downPayment) {
+  return {
+    type: UPDATE_DOWNPAYMENT,
+    payload: downPayment
+  }
+}
+
+export function updateCredit(credit) {
+  return {
+    type: UPDATE_CREDIT,
+    payload: credit
+  }
+}
+
+export function updateHistory(history) {
+  return {
+    type: UPDATE_HISTORY,
+    payload: history
+  }
+}
+
+export function updateAddressOne(addressOne) {
+  return {
+    type: UPDATE_ADDRESSONE,
+    payload: addressOne
+  }
+}
+
+export function updateAddressTwo(addressTwo) {
+  return {
+    type: UPDATE_ADDRESSTWO,
+    payload: addressTwo
+  }
+}
+
+export function updateAddressThree(addressThree) {
+  return {
+    type: UPDATE_ADDRESSTHREE,
+    payload: addressThree
+  }
+}
+
+export function updateFirstName(firstName) {
+  return {
+    type: UPDATE_FIRSTNAME,
+    payload: firstName
+  }
+}
+
+
+
+
+
 
 export function updateProper() {
 
@@ -102,6 +182,23 @@ function reducer(state = initalState, action){
         ...state,
         found: action.payload
       };
+    
+    case UPDATE_REALESTATEAGENT:
+      return {
+        ...state,
+        readEstateAgent: action.payload
+      }
+    
+    case UPDATE_COST:
+      return {
+        ...state,
+        cost: action.payload
+      }
+    case UPDATE_DOWNPAYMENT:
+      return {
+        ...state,
+        downPayment: action.payload
+      }
 
     default: 
     return state;
